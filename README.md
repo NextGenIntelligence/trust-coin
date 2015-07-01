@@ -1,9 +1,9 @@
 # trust-coin
 Cryptocurrency without a ledger
 
-Trust coin is a protocol for interpretting cryptographically signed messages which allow these messages to be used in the exchange of virtual tokens between holders of public keys.
+Trust coin is a protocol for interpretting cryptographically signed messages.  These message are used to issue or exchange virtual tokens by holders of public/private cryptographic key pairs.
 
-As for sharing and publishing these messages, there are no specific rules for how to do this.  The one suggested convention is to wait 24 hours after first publishing a transaction before accepting a transaction.  This gives the transaction time to propagate through networks interested in tracking the currency.  See the section on double signed transactions for more details.
+As for sharing and publishing these messages, there are no specific rules for how to do this.  A suggested convention is to wait 24 hours after first publishing a transaction before accepting that transaction.  This gives the transaction time to propagate through networks interested in tracking the currency.  See the section on double signed transactions for more details.
 
 
 ##Creating a currency and Issuing tokens
@@ -42,6 +42,8 @@ This can make spent coins vulnerable to attacks where a previous coin owner can 
 ## Rejecting transactions
 
 In case a transaction fails or is canceled before both parties sign the transaction, the recipient may publish a cancellation message to indicate the transaction will not occur and allow the sender spend that token somewhere else.
+
+Senders should normally allow the recipient to publish the transaction message that they send them.  If a recipient does not want to accept the token they should not publish the received transaction message.  Nevertheless it is good practice to issue a transaction rejection message which the sender can publish so they are free to use the token again immediately, without fear of conflicting transaction messages being published.
 
 ## Conflicting transaction messages
 
