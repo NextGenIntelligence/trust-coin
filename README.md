@@ -23,7 +23,7 @@ Issued tokens belong the issuer until they send that token to another party with
 
 ##Double signed transactions
 
-Transactions should be signed by both participating parties.  The content of the signed transactions should be identitical.
+Transactions messages should be signed by both participating parties.  The content of the signed transactions should be identitical.
 
 Transactions should include the following information.
   * Currency Name
