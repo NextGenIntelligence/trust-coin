@@ -23,7 +23,7 @@ Issued tokens belong the issuer until they send that token to another party with
 
 ##Double signed transactions
 
-Transactions messages should be signed by both participating parties.  The content of the signed transactions should be identitical.
+Transactions messages should be signed by both participating parties: sender and recepient.  The content of the transaction message signed by each party should be identitical.
 
 Transactions should include the following information.
   * Currency Name
@@ -38,7 +38,7 @@ Both recipient and sender must sign a transaction for it to be valid.  Normally 
 
 If double spends occur there is no standard way for resolving the outcome of the double spend.  Coins that are double spent may be "lost" as parties may choose to reject coins with a double spend in their history.
 
-This can make spent coins vulnerable to attacks where a previous coin owner can sabatoge the value of the coin by creating a double spend after the fact.  When choosing to accept or reject double spended coins you should keep such possibilities in mind.  In general, staying up to date with all legitimate published transactions involving a currency you accept is important so that you can fairly and accurately assess the legitimacy of specific transaction messages.
+This can make spent coins vulnerable to attacks where a previous coin owner can sabatoge the value of the coin by creating a double spend after the fact.  When choosing to accept or reject double spended coins you should keep such possibilities in mind.  In general, staying up to date with all legitimate published transactions involving a currency you accept is important so that you can fairly and accurately assess the legitimacy of specific transaction messages.  This behavior will normally be handled by programmed clients, but there is necessarily no strict specification for how they handle this.
 
 ## Rejecting transactions
 
