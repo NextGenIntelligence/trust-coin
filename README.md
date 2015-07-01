@@ -117,3 +117,5 @@ The lower the basic reproduction rate, the longer the chain will be obfuscating 
 
 The more recent a message was published, the quicker peers should respond to passing it on.  A priority queue that considers both when the message was first published and how long it has been in queue can help messages propagate through the network quickly.
 
+Public key holders should rotate which peers they use to publish a new message so that their peers can't associate their IP with their public key.
+
