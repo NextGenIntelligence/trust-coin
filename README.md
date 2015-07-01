@@ -10,7 +10,7 @@ As for sharing and publishing these messages, there are no specific rules for ho
 
 Anyone with a public/private cryptographic key pair can become an issuer of currency.
 
-To create a new currency and issue tokens you sign messages indicating the following:
+To create a new currency and issue tokens you sign a new message for each new token you create indicating the following:
 
   * Currency Issuer public key: The public key of the party issuing the currency.
   * Currency Name: The name of the currency that the token is an instance of.  The name and public key together indicate a unique currency.  It is recommended that you choose a unique name to avoid confusion with other currencies that other parties have issued.
