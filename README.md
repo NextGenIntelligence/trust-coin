@@ -5,7 +5,7 @@ Cryptocurrency without a ledger
 
 trust-coin is a protocol for writing cryptographically signed messages that allows holders of public/private key pairs to issue, exchange, and accept virtual tokens as currencies.
 
-As for sharing and publishing these messages, there are no specific rules for how to do this.  A suggested convention is to wait 24 hours after first publishing a transaction before accepting that transaction.  This gives the transaction time to propagate through networks interested in tracking the currency.  See the section on double signed transactions for more details.  trust-coin was not intended to be used for quick, point of sale digital or physical transactions.
+As for sharing and publishing these messages, there are no specific rules for how to do this.  A suggested convention is to wait 24 hours after first publishing a transaction before accepting that transaction.  This gives the transaction time to propagate through networks interested in tracking the currency.  See the section on double signed transactions for more details.  trust-coin was not intended to be used for quick, point of sale, digital or physical transactions.
 
 Additional recommended conventions for publishing and propagating transaction messages are described in the section, "Publishing and Propagating Transaction Messages".
 
