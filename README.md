@@ -16,7 +16,7 @@ To create a new currency and issue tokens you sign a new message for each new to
   * Currency Issuer public key: The public key of the party issuing the currency.
   * Currency Name: The name of the currency that the token is an instance of.  The name and public key together indicate a unique currency.  It is recommended that you choose a unique name to avoid confusion with other currencies that other parties have issued.
   * Token ID: Each token of currency must have a unique identifier or serial number.  Using serial numbers that increment by one is a good idea.  This makes it easier for peers to track all instances of a currency.
-  * Creation Time: For recording keeping purposes, indicate the time the token was issued with desired level of accuracy (month, day, minute, etc.) Remember that time ordering cannot be proven cryptographically. Timestamping messages is used to simplify record keeping and allow message recipients to evaluate whether they received that message in a timely manner.
+  * Creation Time: For record keeping purposes, indicate the time the token was issued with desired level of accuracy (month, day, minute, etc.) Remember that time ordering cannot be proven cryptographically. Timestamping messages is used to simplify record keeping and allow message recipients to evaluate whether they received that message in a timely manner.
 
 Issued tokens belong the issuer until the send that token to another party with a transaction.
 
