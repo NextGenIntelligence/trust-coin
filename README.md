@@ -38,13 +38,17 @@ Both recipient and sender must sign a transaction for it to be valid.  Normally 
 
 If double spends occur there is no standard way for resolving the outcome of the double spend.  Coins that are double spent may be "lost" as parties may choose to reject coins with a double spend in their history.
 
-This can make spent coins vulnerable to attacks where a previous coin owner can sabatoge the value of the coin by creating a double spend after the fact.  When choosing to accept or reject double spended coins you should keep such possibilities in mind.  In general, staying up to date with all legitimate published transactions involving a currency you accept is important so that you can fairly and accurately assess the legitimacy of specific transaction messages.  This behavior will normally be handled by programmed clients, but there is necessarily no strict specification for how they handle this.
+This can make spent coins vulnerable to attacks where a previous coin owner can sabatoge the value of the coin by creating a double spend after the fact.  When choosing to accept or reject double spended coins you should keep such possibilities in mind.  In general, staying up to date with all published transactions involving a currency you accept is important so that you can fairly and accurately assess the legitimacy of specific transaction messages.  This behavior will normally be handled by programmed clients, but there is necessarily no strict specification for clients handle this.  A precise prescription for how clients handle this is not necessary and would make the system vulnerable to manipulation through specific attack vectors.  Client implementors and people using those clients are responsible to make sure that the client behaves in such a way to protect their interests.
+
+This is discussed further in the section: "Conflicting transaction messages"
 
 ## Rejecting transactions
 
-In case a transaction fails or is canceled before both parties sign the transaction, the recipient may publish a cancellation message to indicate the transaction will not occur and allow the sender spend that token somewhere else.
+In case a transaction fails or is aborted before both parties sign the transaction, the recipient may publish a cancellation message to indicate the transaction will not occur and allow the sender spend that token somewhere else.
 
-Senders should normally allow the recipient to publish the transaction message that they send them.  If a recipient does not want to accept the token they should not publish the received transaction message.  Nevertheless it is good practice to issue a transaction rejection message which the sender can publish so they are free to use the token again immediately, without fear of conflicting transaction messages being published.
+Senders should normally allow the recipient to publish the transaction message that they send them.  This way if a recipient chooses not to accept the token they should not publish the received transaction message.  Nevertheless it is good practice to issue a transaction rejection message which the sender can publish so they are free to use the token again immediately, without fear of a conflicting transaction message being published.
+
+The content of the rejected transaction is the same as the content of the transaction itself except with a flag indicating that the transaction is being rejected.
 
 ## Conflicting transaction messages
 
