@@ -54,7 +54,7 @@ Senders should allow the recipient to publish the transaction message that they 
 
 The content of the rejected transaction is the same as the content of the transaction itself except with a flag indicating that the transaction is being rejected.
 
-## Canceling transactions
+## Cancelling transactions
 
 Canceling transactions is similar to rejecting transactions, except it is performed by the sender of the currency token.  A transaction cancellation message is identitcal to the transaction message except for the presence of a cancelation flag.
 
