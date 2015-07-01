@@ -38,7 +38,7 @@ Both recipient and sender must sign a transaction for it to be valid.  Normally 
 
 If double spends occur there is no standard way for resolving the outcome of the double spend.  Coins that are double spent may be "lost" as parties may choose to reject coins with a double spend in their history.
 
-This can make spent coins vulnerable to attacks where a previous coin owner can sabatoge the value of the coin by creating a double spend after the fact.  When choosing to accept or reject double spended coins you should keep such possibilities in mind.  In general, staying up to date with all published transactions involving a currency you accept is important so that you can fairly and accurately assess the legitimacy of specific transaction messages.  This behavior will normally be handled by programmed clients, but there is necessarily no strict specification for clients handle this.  A precise prescription for how clients handle this is not necessary and would make the system vulnerable to manipulation through specific attack vectors.  Client implementors and people using those clients are responsible to make sure that the client behaves in such a way to protect their interests.
+This can make spent coins vulnerable to attacks where a previous coin owner can sabatoge the value of the coin by creating a double spend after the fact.  When choosing to accept or reject double spended coins you should keep such possibilities in mind.  In general, staying up to date with all published transactions involving a currency you accept is important so that you can fairly and accurately assess the legitimacy of specific transaction messages.  This behavior will normally be handled by programmed clients, but there is necessarily no strict specification for how clients handle this.  A precise prescription for how clients handle this is not necessary and would make the system vulnerable to manipulation through specific attack vectors.  Client implementors and people using those clients are responsible to make sure that the client behaves in such a way to protect their interests.
 
 This is discussed further in the section: "Conflicting transaction messages"
 
@@ -46,13 +46,13 @@ This is discussed further in the section: "Conflicting transaction messages"
 
 In case a transaction fails or is aborted before both parties sign the transaction, the recipient may publish a cancellation message to indicate the transaction will not occur and allow the sender spend that token somewhere else.
 
-Senders should normally allow the recipient to publish the transaction message that they send them.  This way if a recipient chooses not to accept the token they should not publish the received transaction message.  Nevertheless it is good practice to issue a transaction rejection message which the sender can publish so they are free to use the token again immediately, without fear of a conflicting transaction message being published.
+Senders should allow the recipient to publish the transaction message that they send them.  This way if a recipient chooses not to accept the token they should not publish the received transaction message.  Nevertheless it is good practice to issue a transaction rejection message which the sender can publish so they are free to use the token again immediately, without fear of a conflicting transaction message being published and putting a blemish on their record.
 
 The content of the rejected transaction is the same as the content of the transaction itself except with a flag indicating that the transaction is being rejected.
 
 ## Conflicting transaction messages
 
-If a party issues conflicting transaction messages, such as accepting or rejecting a unit of currency, or double spending a unit of currency, that hurts the reputation of the entity that signed those conflicting transactions.  There is no standard way to respond to such conflicting messages, but currency users would be wise to avoid transacting with parties with a history of conflicting transactions.
+If a party issues conflicting transaction messages, such as both accepting and rejecting a transaction message, or double spending a unit of currency, that hurts the reputation of the entity that signed those conflicting transactions.  There is no standard way to respond to such conflicting messages, but currency users would be wise to avoid transacting with parties with a history of conflicting transactions.
 
 If a party tracks what messages they have signed(ie using a client) and keeps their private key secure, there is no reason they would legitimately sign conflicting transaction messages.  If transacting parties publish transaction messages promptly and wait according to described conventions, and peers track all transaction messages for currencies they accept, there should be no motivation for a party to publish illegitimate conflicting transaction messages.
 
@@ -62,32 +62,36 @@ If a currency issuer wants to permanently stop issuing tokens of a currency they
 
  * Name of currency to stop issuing
  * Time to stop issuing (recommended no more than 24 hours previous of current time, though retroactively canceling can be accepted.  It is not recommended to use this feature to announce a future cancelation of a currency.)
- * Serial number of the last valid issued token. This is why
- * (optional) Hacked: a flag indicating whether the private key of the currency issuer has been compromised.  If a currency private key is stolen, a currency issuer can retrieve a backup of their private key and use this to publish a stop message.  Because competing messages will be published using the same private key, the issuing history and spending of currency tokens should be used to help determine which 
+ * Serial number of the last valid issued token. This is one reason why it is a good idea to increment serial numbers by one with each new token issued.
+ * (optional) Hacked: a flag indicating whether the private key of the currency issuer has been compromised.  If a currency private key is stolen, a currency issuer can retrieve a backup of their private key and use this to publish a stop message.  Because competing messages will be published using the same private key, the issuing history and spending of currency tokens should be used to help determine which stop message indicates the legitimate stop message created by the original holder of the public/private key pair.
 
 A currency issuer may wish to stop issuing the currency for a variety of reasons.
 
-Proof of work: in case the private key is compromised, the real issuer and competing party can publish many messages indicating the same.
-
 Preventing new issues of a currency can protect that currency from loss of value or possibility of hacking in the future.
+
+In the case of hacking, the following algorithm can be used to limit the ability of the hacker to manipulate which version of a "Stop New Issues" message should be accepted.
+
+Proof of work: in case the private key is compromised, the real issuer and competing party can publish many messages indicating the same time to stop issuing and the same serial number of the last valid issued token.  This way, peers would only need to choose between two valid messages for the legitimate stop new issues message.  Existing proof of work algorithms can be used to give weight to these redundant messages.
+
+Proof of work in this case cannot prove the legitimacy of the message published, it only limits the ability of a hacker to flood the network with conflicting stop issuing messages in hopes of increasing the chances of securing some of that issued currency for themselves, or invalidating legitimately issued tokens.
 
 
 ## Parsing and interpretting signed messages
 
-There is no strict a priori standard for the format of the signed messages specified in this document.  The information should be encoded in a clear and unambiguous way that is easy to parse.  Messages should avoid extra information not relevant to the transactions specified in this document.
+There is no strict a priori standard for the format of the signed messages specified in this document.  The information should be encoded in a clear and unambiguous way that is easy to parse.  Messages should avoid extra information not relevant to the transaction or not specified in this document.
 
-The one important security implication to remember when omitting a public ledger is that there is no way to cryptographically prove the time a message was signed.  Only the ordering of messages signed by a specific key can be established, and only if the signer using that key is trusted.
+The one important security implication to remember when not using a public ledger is that there is no way to cryptographically prove the time a message was signed.  Only the ordering of messages signed by a specific key can be established, and only if the signer using that key is trusted.  For this reason propagating messages through the network, replicating the information contained in these messages, and waiting to accept transactions are very important.
 
 
 ## Denominations
 
-There is no such thing as different denominations of a currency.  All tokens of a currency have the same value, and all transactions involve the transfer of individual tokens.  You may issue separate currencies and offer to exchange between them at a fixed rate.  In this way you may create different denominations.
+There is no such thing as different denominations of a trust-coin currency.  All tokens of a currency have the same value, and all transactions involve the transfer of individual tokens.  You may issue separate currencies and offer to exchange between them at a fixed rate.  In this way you may create different denominations.
 
 You may also sign and accept the transfer of many different tokens and even seperate currencies in a single transaction message.
 
 ## Reducing excessive transactions, creating a reliable network of trust, permitting anonymity and preserving privacy.
 
-The transaction delay and other aspects of the design of trust-coin encourage using trust-coin for larger transactions, reducing the number of transactions that need to be tracked.  The design of trust-coin encourages using consistent cryptographic key pairs for related transactions performed the same party.  In this sense sellers and consumers develop individual reputations based on their transaction history, even if there is no specific reputation algorithm.  The value of the currencies themselves is also based on the reputation of currency issuers.
+The transaction delay and other aspects of the design of trust-coin encourage using trust-coin for larger transactions, reducing the number of transactions that need to be tracked.  The design of trust-coin encourages using consistent cryptographic key pairs for related transactions performed the same party.  In this sense sellers and consumers develop individual reputations based on their transaction history, even if there is no specific reputation algorithm.  The value of the currencies themselves is also based on the reputation of the currency issuers.
 
 There is no barrier to creating new identities.  Anonymity can helped be preserved if desired by creating a new identity for every transaction.
 
@@ -115,11 +119,11 @@ All peers can help in propagating messages, while only interested peers will pro
 
 Depending on the *R<sub>0</sub>* value that peers use, messages will propagate through the network at different speeds. For example, an *R<sub>0</sub>* value of 1.2 would mean that peers would send the message on to at least one other party, and send the message twice with probability 0.2.
 
-When a peer receives a message a second time, they should randomly decide whether to propagate again(perhaps with probablity *R<sub>0</sub>* - 1.  Topologically aware algorithms should help ensure that messages propagate effectively.
+When a peer receives a message a second time, they should randomly decide whether to propagate again(perhaps with probablity *R<sub>0</sub>* - 1.  Topologically aware algorithms should help ensure that messages propagate effectively.  The original publisher of a message can always choose to publish again if it fails to propagate, or send multiple times initially if they are not worried about obfuscating origin.
 
 The lower the basic reproduction rate, the longer the chain will be obfuscating the origin of the message.  If peers are reliable in resending messages(they indicate they have received the message and commit to pass on), this will help ensure the message propagates through the network.
 
-The more recent a message was published, the quicker peers should respond to passing it on.  A priority queue that considers both when the message was first published and how long it has been in queue can help messages propagate through the network quickly.
+The more recently a message was published, the quicker peers should respond to passing it on.  A priority queue that considers both when the message was first published and how long it has been in queue can help messages propagate through the network quickly.
 
 Public key holders should rotate which peers they use to publish a new message so that their peers can't associate their IP with their public key.
 
