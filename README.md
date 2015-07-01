@@ -54,20 +54,30 @@ Senders should allow the recipient to publish the transaction message that they 
 
 The content of the rejected transaction is the same as the content of the transaction itself except with a flag indicating that the transaction is being rejected.
 
+## Canceling transactions
+
+Canceling transactions is similar to rejecting transactions, except it is performed by the sender of the currency token.  A transaction cancellation message is identitcal to the transaction message except for the presence of a cancelation flag.
+
+It is recommended that entities wanting to cancel transactions wait 24 hours before canceling and wait another 24 hours before spending again.
+
+Canceling transactions may be needed if, for example, you donate money to a cause, but they do not accept the transaction in a timely way.  If a recipient fails to reject or accept a transaction, you may have no choice but to cancel.
+
+If you accept a transaction that was canceled, you can cancel as well to indicate consensus.
+
 ## Conflicting transaction messages
 
-If a party issues conflicting transaction messages, such as both accepting and rejecting a transaction message, or double spending a unit of currency, that hurts the reputation of the entity that signed those conflicting transactions.  There is no standard way to respond to such conflicting messages, but currency users would be wise to avoid transacting with parties with a history of conflicting transactions.
+If a party issues conflicting transaction messages, such as both accepting and rejecting a transaction, or double spending a unit of currency, that hurts the reputation of the entity that signed those conflicting transactions.  There is no standard way to respond to such conflicting messages, but currency users would be wise to avoid transacting with parties with a history of conflicting transactions.
 
 If a party tracks what messages they have signed(ie using a client) and keeps their private key secure, there is no reason they would legitimately sign conflicting transaction messages.  If transacting parties publish transaction messages promptly and wait according to described conventions, and peers track all transaction messages for currencies they accept, there should be no motivation for a party to publish illegitimate conflicting transaction messages.
 
-## Stopping new Issues
+## Stopping New Issues
 
 If a currency issuer wants to permanently stop issuing tokens of a currency they may publish a message indicating the following:
 
  * Name of currency to stop issuing
- * Time to stop issuing (recommended no more than 24 hours previous of current time, though retroactively canceling can be accepted.  It is not recommended to use this feature to announce a future cancelation of a currency.)
+ * Time to stop issuing (recommended no more than 24 hours previous of current time.  This should not be used to announce a future cancelation of a currency. In that case issue the tokens, cancel and hold.)
  * Serial number of the last valid issued token. This is one reason why it is a good idea to increment serial numbers by one with each new token issued.
- * (optional) Hacked: a flag indicating whether the private key of the currency issuer has been compromised.  If a currency private key is stolen, a currency issuer can retrieve a backup of their private key and use this to publish a stop message.  Because competing messages will be published using the same private key, the issuing history and spending of currency tokens should be used to help determine which stop message indicates the legitimate stop message created by the original holder of the public/private key pair.
+ * (optional) Hacked: a flag indicating whether the private key of the currency issuer has been compromised.  If a currency private key is stolen, a currency issuer can retrieve a backup of their private key and use this to publish a stop message.  Because competing messages will be published using the same private key, the issuing history and spending of currency tokens should be used to help determine which stop message is the legitimate stop message created by the original holder of the public/private key pair.
 
 A currency issuer may wish to stop issuing the currency for a variety of reasons.
 
