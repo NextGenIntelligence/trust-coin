@@ -1,7 +1,7 @@
 # trust-coin
 Cryptocurrency without a ledger
 
-Trust coin is a protocol for interpretting cryptographically signed messages which allow these messages to function as a currency.
+Trust coin is a protocol for interpretting cryptographically signed messages which allow these messages to be used in the exchange of virtual tokens between holders of public keys.
 
 As for sharing and publishing these messages, there are no specific rules for how to do this.  The one suggested convention is to wait 24 hours after first publishing a transaction before accepting a transaction.  This gives the transaction time to propagate through networks interested in tracking the currency.  See the section on double signed transactions for more details.
 
