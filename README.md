@@ -39,6 +39,16 @@ If double spends occur there is no standard way for resolving the outcome of the
 
 This can make spent coins vulnerable to attacks where a previous coin owner can sabatoge the value of the coin by creating a double spend after the fact.  When choosing to accept or reject double spended coins you should keep such possibilities in mind.  In general, staying up to date with all legitimate published transactions involving a currency you accept is important so that you can fairly and accurately assess the legitimacy of specific transaction messages.
 
+## Rejecting transactions
+
+In case a transaction fails or is canceled before both parties sign the transaction, the recipient may publish a cancellation message to indicate the transaction will not occur and allow the sender spend that token somewhere else.
+
+## Conflicting transaction messages
+
+If a party issues conflicting transaction messages, such as accepting or rejecting a unit of currency, or double spending a unit of currency, that hurts the reputation of the entity that signed those conflicting transactions.  There is no standard way to respond to such conflicting messages, but currency users would be wise to avoid transacting with parties with a history of conflicting transactions.
+
+If a party tracks what messages they have signed(ie using a client) and keeps their private key secure, there is no reason they would legitimately sign conflicting transaction messages.  If transacting parties publish transaction messages promptly and wait according to described conventions, and peers track all transaction messages for currencies they accept, there should be no motivation for a party to publish illegitimate conflicting transaction messages.
+
 ## Stopping new Issues
 
 If a currency issuer wants to permanently stop issuing tokens of a currency they may publish a message indicating the following:
