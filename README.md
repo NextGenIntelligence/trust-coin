@@ -1,9 +1,7 @@
 # trust-coin
 Cryptocurrency without a ledger
 
-*Avoiding paranoia that temporal ambiguity will lead to lack of consensus and abuses involving intentionally
-conflicting transaction messages by replicating rapidly, confirming patiently, leveraging trust and reputation where valuable, even while allowing anonymity when expedient,
-and permitting evolution of flexible market guided transaction acceptance algorithms.*
+*Avoiding paranoia that cryptographic temporal ambiguity will lead to lack of consensus and abuses involving intentionally conflicting transaction messages by replicating rapidly, confirming patiently, leveraging trust and reputation where valuable, allowing anonymity when acceptable, and permitting evolution of flexible market guided transaction acceptance algorithms.*
 
 Trust coin is a protocol for writing cryptographically signed messages for issuing and exchanging virtual tokens by holders of public/private cryptographic key pairs.
 
