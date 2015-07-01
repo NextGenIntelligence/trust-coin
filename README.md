@@ -9,6 +9,8 @@ As for sharing and publishing these messages, there are no specific rules for ho
 
 Additional recommended conventions for publishing and propagating transaction messages are described in the section, "Publishing and Propagating Transaction Messages".
 
+trust-coin is unique because it is not a specific currency but rather a flexible network that allows any individual or entity to issue and manage their own distributed cryptocurrency.  Many currencies can coexist on a single network and the burden each currency places on peers is flexible as peers decide what role they will play in transmitting and storing transaction messages.  It is recommended that peers contribute to propagating many different currency transaction messages but may store long term only those messages related to currencies that they accept.
+
 ##Creating a currency and Issuing tokens
 
 Anyone with a public/private cryptographic key pair can become an issuer of currency.
