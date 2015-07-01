@@ -5,6 +5,7 @@ Trust coin is a protocol for interpretting cryptographically signed messages.  T
 
 As for sharing and publishing these messages, there are no specific rules for how to do this.  A suggested convention is to wait 24 hours after first publishing a transaction before accepting that transaction.  This gives the transaction time to propagate through networks interested in tracking the currency.  See the section on double signed transactions for more details.
 
+Additional recommended conventions for publishing and propagating transaction messages are described in the section, "Publishing and Propagating Transaction Messages".
 
 ##Creating a currency and Issuing tokens
 
@@ -92,5 +93,27 @@ If further anonymity and smaller, faster, and lighter transactions are desired, 
 
 The only cryptographic algorithm used by this scheme is public key cryptography.  Public key cryptography allows you to sign a message using a private key.  Every private key has a unique corresponding public key.  The public key can be used to verify the private key signature.  You publish the public key with each message so everyone can verify that that message was signed with a specific private key, even though the private key itself is not shared.
 
-The security of public key cryptography algorithms is well understood by the cryptography community.  Public key cryptography is used in a variety of applications, including existing cryptocurrencies and 
-Public key cryptography is well est
+The security of public key cryptography algorithms is well understood by the cryptography community.  Public key cryptography is used in a variety of applications, including existing cryptocurrencies and protocols such as SSL.
+The security of public key cryptography is well established and understood, and public key algorithms are being continually and gradually updated and improved to ensure continued security.
+
+## Publishing and Propagating Transaction Messages
+
+There is no prescribed way to publish or propagate transaction messages.  Nevertheless some peer to peer schemes may offer certain advantages.
+
+###Peer to Peer publishing
+Peer to peer publishing can offer many advantages.  It can help make the origin of messages harder to trace.  You can share a message without revealing you are the original entity publishing that message.
+
+Diseases are studied in epidemiology.  The rate at which diseases spread is described by a figure *R<sub>0</sub>*.  This is called the [basic reproduction rate](https://en.wikipedia.org/w/index.php?title=Basic_reproduction_number&oldid=653148252).
+
+By propagating messages through the network at a low basic reproduction rate through encrypted channels, this serves to obfuscate the origin of the message.  Algorithms that are aware of network topology(bittorrent DHT does this, I think) can be used to help ensure the message don't first saturate a local part of the network.
+
+All peers can help in propagating messages, while only interested peers will process those messages and store them long term.
+
+Depending on the *R<sub>0</sub>* value that peers use, messages will propagate through the network at different speeds. For example, an *R<sub>0</sub>* value of 1.2 would mean that peers would send the message on to at least one other party, and send the message twice with probability 0.2.
+
+When a peer receives a message a second time, they should randomly decide whether to propagate again(perhaps with probablity *R<sub>0</sub>* - 1.  Topologically aware algorithms should help ensure that messages propagate effectively.
+
+The lower the basic reproduction rate, the longer the chain will be obfuscating the origin of the message.  If peers are reliable in resending messages(they indicate they have received the message and commit to pass on), this will help ensure the message propagates through the network.
+
+The more recent a message was published, the quicker peers should respond to passing it on.  A priority queue that considers both when the message was first published and how long it has been in queue can help messages propagate through the network quickly.
+
