@@ -72,7 +72,7 @@ You may also sign and accept the transfer of many different tokens and even sepe
 
 The transaction delay and other aspects of the design of trust-coin encourage using trust-coin for larger transactions, reducing the number of transactions that need to be tracked.  The design of trust-coin encourages using consistent cryptographic key pairs for related transactions performed the same party.  In this sense sellers and consumers develop individual reputations based on their transaction history, even if there is no specific reputation algorithm.  The value of the currencies themselves is also based on the reputation of currency issuers.
 
-There is barrier to creating new identities.  Anonymity can helped be preserved if desired by creating a new identity for every transaction.
+There is no barrier to creating new identities.  Anonymity can helped be preserved if desired by creating a new identity for every transaction.
 
 If further anonymity and smaller, faster, and lighter transactions are desired, it is recommended that people use [hash-cash](http://github.com/derekmc/hash-cash).
 
