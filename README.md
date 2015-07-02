@@ -11,7 +11,7 @@ Additional recommended conventions for publishing and propagating transaction me
 
 trust-coin is unique because it is not a specific currency but rather a flexible network that allows any individual or entity to issue and manage their own distributed cryptocurrency.  Many currencies can coexist on a single network and the burden each currency places on peers is flexible as peers decide what role they will play in transmitting and storing transaction messages.  It is recommended that peers contribute to propagating many different currency transaction messages but may store long term only those messages of currencies of interest.
 
-##Creating a currency and Issuing tokens
+##Creating a currency and issuing tokens
 
 Anyone with a public/private cryptographic key pair can become an issuer of currency.
 
@@ -70,7 +70,7 @@ If a party issues conflicting transaction messages, such as both accepting and r
 
 If a party tracks what messages they have signed(ie using a client) and keeps their private key secure, there is no reason they would legitimately sign conflicting transaction messages.  If transacting parties publish transaction messages promptly and wait according to described conventions, and peers track all transaction messages for currencies they accept, there should be no motivation for a party to publish illegitimate conflicting transaction messages.
 
-## Stopping New Issues
+## Stopping new issues
 
 If a currency issuer wants to permanently stop issuing tokens of a currency they may publish a message indicating the following:
 
@@ -118,11 +118,11 @@ The only cryptographic algorithm used by this scheme is public key cryptography.
 The security of public key cryptography algorithms is well understood by the cryptography community.  Public key cryptography is used in a variety of applications, including existing cryptocurrencies and protocols such as SSL.
 The security of public key cryptography is well established and understood, and public key algorithms are being continually and gradually updated and improved to ensure continued security.
 
-## Publishing and Propagating Transaction Messages
+## Publishing and propagating transaction messages
 
 There is no prescribed way to publish or propagate transaction messages.  Nevertheless some peer to peer schemes may offer certain advantages.
 
-###Peer to Peer publishing
+###Peer to peer publishing
 Peer to peer publishing can offer many advantages.  It can help make the origin of messages harder to trace.  You can share a message without revealing you are the original entity publishing that message.
 
 Diseases are studied in epidemiology.  The rate at which diseases spread is described by a figure *R<sub>0</sub>*.  This is called the [basic reproduction rate](https://en.wikipedia.org/w/index.php?title=Basic_reproduction_number&oldid=653148252).
