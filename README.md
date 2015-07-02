@@ -13,7 +13,7 @@ trust-coin is unique because it is not a specific currency but rather a flexible
 
 ##Creating a currency and issuing tokens
 
-Anyone with a public/private cryptographic key pair can become an issuer of currency.
+Anyone with a public/private cryptographic key pair can become an issuer of their own unique currency.
 
 To create a new currency and issue tokens you sign a new message for each new token you create indicating the following:
 
