@@ -1,16 +1,19 @@
 # trust-coin
 Cryptocurrency without a ledger.
 
-*Consensus through independtly verified and recorded histories. We can trust time.*
+*Consensus through independtly verified and recorded histories.*
 
+trust-coin is a protocol for writing cryptographically signed messages that allows holders of public/private key pairs to issue, exchange, and accept virtual tokens as currencies.  It is unique because it is not a single currency but a tool for users to create their own currencies that can live on a distributed network without centralized exchange.
 
-trust-coin is a protocol for writing cryptographically signed messages that allows holders of public/private key pairs to issue, exchange, and accept virtual tokens as currencies.  It is unique because it is not a single currency but a tool for users to create their own distributed currencies.
+trust-coin itself has no strict rules for how the network works.  Users can publish, share, accept, and store transaction messages anyway they like.  Additionally, users or client implementors can choose their own criteria for accepting coins.  The only strict rule is to not publish conflicting transaction messages signed with your key.
 
-As for sharing and publishing these messages, there are no specific rules for how to do this.  A suggested convention is to wait 24 hours after first publishing a transaction before accepting that transaction.  This gives the transaction time to propagate through networks interested in tracking the currency.  See the section on double signed transactions for more details.  trust-coin was not intended to be used for quick, point of sale, digital or physical transactions.
+There are some suggested conventions to prevent fraud in the exchange of currency tokens.  One of these conventions is to wait 24 hours after publishing a transaction message before accepting that transaction, especially when transacting with a new/anonymous party.  trust-coin allows peers to reuse the same keys to establish trust and reputation, or to create new keys each time if strict anonymity is desired.  To prevent fraud when transacting, the 24 hour waiting period is recommended so that conflicting transaction messages cannot be published simultaneously to double spend coins or otherwise commit fraud.  If a conflicting transaction message is published at a later point in time, this is easy to detect through the replicated stored histories.  The conflicting message can be ignored, though the reputation of the key that signed it will be hurt.
 
-Additional recommended conventions for publishing and propagating transaction messages are described in the section, "Publishing and Propagating Transaction Messages".
+The section on double signed transactions has more information about how currency tokens change hands.
 
-trust-coin is unique because it is not a specific currency but rather a flexible network that allows any individual or entity to issue and manage their own distributed cryptocurrency.  Many currencies can coexist on a single network and the burden each currency places on peers is flexible as peers decide what role they will play in transmitting and storing transaction messages.  It is recommended that peers contribute to propagating many different currency transaction messages but may store long term only those messages of currencies of interest.
+Some possible network designs and conventions for publishing and propagating transaction messages are described in the section, "publishing and propagating transaction messages".
+
+trust-coin uniqueness allows many currencies to coexist on the same network.  The burden each currency places on peers is flexible as peers decide what role they will play in transmitting and storing transaction messages.  It is recommended that peers contribute to propagating many different currency transaction messages but may store long term only those messages of currencies of interest.  Less popular currencies will not create a significant burden on the network.
 
 ##Creating a currency and issuing tokens
 
