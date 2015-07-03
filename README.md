@@ -1,9 +1,7 @@
 # trust-coin
 Cryptocurrency without a ledger.
 
-*Consensus through independtly verified and recorded histories*
-
-*We can trust time*
+*Consensus through independtly verified and recorded histories. We can trust time.*
 
 
 trust-coin is a protocol for writing cryptographically signed messages that allows holders of public/private key pairs to issue, exchange, and accept virtual tokens as currencies.
