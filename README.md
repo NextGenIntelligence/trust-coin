@@ -58,16 +58,6 @@ Senders should allow the recipient to publish the transaction message that they 
 
 The content of the rejected transaction is the same as the content of the transaction itself except with a flag indicating that the transaction is being rejected.
 
-## Cancelling transactions
-
-Canceling transactions is similar to rejecting transactions, except it is performed by the sender of the currency token.  A transaction cancellation message is identitcal to the transaction message except for the presence of a cancelation flag.
-
-It is recommended that entities wanting to cancel transactions wait 24 hours before canceling and wait another 24 hours before spending again.
-
-Canceling transactions may be needed if, for example, you donate money to a cause, but they do not accept the transaction in a timely way.  If a recipient fails to reject or accept a transaction, you may have no choice but to cancel.
-
-If you accept a transaction that was canceled, you can cancel as well to indicate consensus.
-
 ## Conflicting transaction messages
 
 If a party issues conflicting transaction messages, such as both accepting and rejecting a transaction, or double spending a unit of currency, that hurts the reputation of the entity that signed those conflicting transactions.  There is no standard way to respond to such conflicting messages, but currency users would be wise to avoid transacting with parties with a history of conflicting transactions.
