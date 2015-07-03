@@ -13,7 +13,7 @@ The section on double signed transactions has more information about how currenc
 
 Some possible network designs and conventions for publishing and propagating transaction messages are described in the section, "publishing and propagating transaction messages".
 
-trust-coin uniqueness allows many currencies to coexist on the same network.  The burden each currency places on peers is flexible as peers decide what role they will play in transmitting and storing transaction messages.  It is recommended that peers contribute to propagating many different currency transaction messages but may store long term only those messages of currencies of interest.  Less popular currencies will not create a significant burden on the network.
+trust-coin uniquely allows many currencies to coexist on the same network.  The burden each currency places on peers is flexible as peers decide what role they will play in transmitting and storing transaction messages.  It is recommended that peers contribute to propagating many different currency transaction messages but may store long term only those messages of currencies of interest.  Less popular currencies will not create a significant burden on the network.
 
 ##Creating a currency and issuing tokens
 
