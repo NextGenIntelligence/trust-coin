@@ -15,11 +15,10 @@ For popular and well established coins, the conventional acceptance delay may be
 
 Transacting on a branch of a coin's history is a vote on the validity of that branch in the case of a fork.  The history and reputation of the public keys used is considered in weighting this vote.  This is discussed in detail in the section: "Resolving double spends and coin forks"
 
-trust-coin itself has no strict rules for how the network works.  Peers can publish, share, accept, and store transaction messages anyway they like.  Additionally, users or client implementors can choose their own criteria for accepting coins.  The only strict rule is to not publish conflicting transaction messages signed with your key.
 
-There are some suggested conventions to prevent fraud in the exchange of currency tokens.  One of these conventions is to wait 24 hours after publishing a transaction message before signing receipt of that transaction, especially when transacting with a new/anonymous party.  trust-coin allows peers to reuse the same keys to establish trust and reputation (although there is no specific reputation algorithm), or to create new keys each time if strict anonymity is desired.  To prevent fraud when transacting, the 24 hour waiting period is recommended so that conflicting transaction messages cannot be published simultaneously.  A 24 hour waiting period allows any client that downloads updates daily to positively assert which transaction message was published first.  The conflicting message can be ignored, though the reputation of the key that signed it will be damaged.
+The section "Coin exchanges are signed by both parties" has more information about how currency tokens change hands.
 
-The section on double signed transactions has more information about how currency tokens change hands.
+trust-coin itself has no strict rules for how the network works.  Peers can publish, share, accept, and store transaction messages anyway they like.  Additionally, users or client implementors can choose their own criteria for accepting coins.  The only strict rule is to not publish conflicting transaction messages signed with your key or work on an invalid branch of a coin's history.
 
 Some possible network designs and conventions for publishing and propagating transaction messages are described in the section, "publishing and propagating transaction messages".
 
