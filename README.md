@@ -79,11 +79,11 @@ If a party tracks what messages they have signed(ie using a client) and keeps th
 
 ## Resolving double spends and coin forks
 
-For anonymous single use keys, there may be no deterrent to double spending.  Thus it is important that the community protect against attempts to double spend coins.  It is important that the behavior of the people in the network resolve double spends in a timely manner.
+For anonymous single use keys, there may be no deterrent to double spending.  Thus it is important that the community protect against attempts to double spend coins.  It is important that the behavior of the people in the network resolve double spends in a timely and consistent manner.
 
-One unique aspect of trust coin is its focus on relationships between different parties and the incentives and expectations involved in these relationships.
+One unique aspect of trust-coin is its focus on relationships between different parties and the incentives and expectations involved in these relationships.
 
-Money is first and foremost is an accounting tool.  trust-coin is intended to be used for larger transactions or exchanges of value that are of interest to the entire community.  The time delay and discrete coin values are two aspects of trust-coin's design that discourage overreliance on the network.  If a merchant and customer have an ongoing relationship, it is expected that they would keep a seperate accounting of balances in this relationship.  This allows arbitrary accuraccy and reduces the burden placed on the network from many interactions and balance updates.
+Money is first and foremost is an accounting tool.  trust-coin is intended to be used for larger transactions or exchanges of value that are of interest to the entire community.  The large time delay in accepting coins and discrete coin values are two aspects of trust-coin's design that discourage overreliance on the network for small frequent transactions.  If a merchant and customer have an ongoing relationship, it is expected that they would keep a seperate accounting of balances in this relationship.  This allows arbitrary accuraccy and reduces the burden placed on the network from many interactions and balance updates.
 
 Many merchants may decide not to transact with anonymous parties unless there is an ongoing relationship.  In case of a double spend that compromises the value of a coin received, they will be in a position to hold the other party accountable.
 
