@@ -10,7 +10,7 @@ var file = new static.Server("./www");
 
 {
     data : JSON.stringify({
-        action: "exchange",
+        action: "send",
         issuer_pubkey:
         currency_name: ,
         currency_tokenid: ,
@@ -18,6 +18,23 @@ var file = new static.Server("./www");
         sender_pubkey: ,
         recipient_pubkey: ,
         sendtime: ,
+    }),
+    sender_sig: "",
+    recipient_sig: "",
+}
+// example receive
+{
+    data : JSON.stringify({
+        action: "receive",
+        issuer_pubkey:
+        currency_name: ,
+        currency_tokenid: ,
+        currency_generation: ,
+        sender_pubkey: ,
+        sendmessage_sigid: ,
+        recipient_pubkey: ,
+        sendtime: ,
+        receivetime: ,
     }),
     sender_sig: "",
     recipient_sig: "",
