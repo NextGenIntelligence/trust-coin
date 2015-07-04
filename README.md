@@ -40,7 +40,7 @@ Issued tokens belong to the issuer until they send that token to another party w
 
 ## Coin exchanges are signed by both parties
 
-Coin exchanges should be signed by both participating parties: sender and recipient. 
+Coin exchanges are signed by both participating parties: sender and recipient. 
 
 Coin exchange messages should include the following information.
   * Message action (in this case, send or receive)
