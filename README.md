@@ -7,7 +7,7 @@ trust-coin is a protocol for writing cryptographically signed messages that allo
 
 Rather than thinking of the entire network as having one ledger, each trust-coin coin has its own uniquely tracked history.  Each time a coin changes hands is a generation.  Conflicting transaction messages can lead the history of a particular coin to fork, but this fork only applies to that coin, and only jeopardizes the value of that coin.  All coin exchanges are signed twice, once by both sender and recipient, so both parties attest that the transaction is valid.
 
-Recipients should wait a standard amount of time before publishing their signature acknowledging receipt of the coin so that all network participants can independently verify the temporal priority of that exchange in case the sender attempts a double spend after the coin is confirmed as received.  Both sender and recipient have an important responsibility in assuring that no double spends occur.
+Recipients should wait a standard amount of time before publishing their signature acknowledging receipt of the coin so that all network participants can independently verify the temporal priority of that exchange in case the sender attempts a double spend after the coin is confirmed as received.  The recipient and network both have important role in assuring that double spends do not occur or are resolved consistently.
 
 It is recommended that for new currencies, the delay in accepting transactions be 24 hours.  This allows every client that downloads updates daily to positively assert which transaction message was published first in case a conflicting message is published later.  If a conflict occurs within this 24 hour window, you or your client program should not accept receipt of that coin.
 
