@@ -3,8 +3,6 @@ var http = require('http'),
     url = require('url'),
     static = require('node-static');
 
-
-var ds = datastore.Datastore(paradigms);
 var file = new static.Server("./www");
 
 // Note: I believe messages signed with a public key use random padding for security purposes.  I need to research this and consider implications.
