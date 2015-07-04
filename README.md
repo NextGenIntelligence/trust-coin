@@ -87,9 +87,9 @@ Money is first and foremost is an accounting tool.  trust-coin is intended to be
 
 Many merchants may decide not to transact with anonymous parties unless there is an ongoing relationship.  In case of a double spend that compromises the value of a coin received, they will be in a position to hold the other party accountable.
 
-Identities are free, but the history associated with each identity is not free.  Identities can be reused without tying that identity to other identities including real world identity.  Reusing the same identity develops a history and reputation of being reliable and trustworthy in conducting transactions.  In this way a public key's history of signed transactions becomes like a form of consumer credit or reddit karma.  Merchants as well should use the same public key to establish
+Identities are free, but the history associated with each identity is not free.  Identities can be reused without tying that identity to other identities including real world identity.  Reusing the same identity develops a history and reputation of being reliable and trustworthy in conducting transactions.  In this way a public key's history of signed transactions becomes like a form of consumer credit or a businesses reputation.  Both merchants and customers can reuse public keys when it makes sense to do so.
 
-Because individual coins fork and not the entire community, an individual double spend might not be an existential threat to the community itself.  Nevertheless the community should take all instances of double spends seriously, and take effective measures as individuals to prevent or discourage this behavior in the future.
+Because individual coins fork and not the entire currency, an individual double spend might not be an existential threat to a currency or its community.  Nevertheless the community should take all instances of double spends seriously, and take effective measures to prevent or discourage similar double spend attempts in the future.
 
 Any time a branch of a coin fork is accepted after a double spend, that is effectively a vote on that branch of the coin's forked history.  In determining the weight of this vote, entities should look at the history of that public key.
 
@@ -97,9 +97,11 @@ If you have been sabatoged by a double spend, and your own reputation is not suf
 
 All major merchants and players should continually track the state of the network independently.  They do this to protect their interest in being able to accurately assess temporal order of transaction messages and independently verify priority of conflicting messages.  All these entities should have sufficient motivation to fairly, objectively, and independently evaluate your claim.  They should be motivated to accept your coin if your claim is valid because that means more business for them.
 
-When being asked to evaluate a coin fork, there are three possible choices an entity could make.  They could choose one fork or the other or choose not to accept a coin at all.  Having an identical process for choosing this outcome is not an advantage, but rather a weakness.  An identitical process for deciding coin forks makes it easier for attackers to evaluate what will lead one coin fork to succeed over another.  Instead, the consistency of different algorithms in choosing one fork over another is paramount.  This consistency comes from everyone participating in the network and independently recording all history for currencies of interest.  The temporal priority of messaegs should be known to everyone involved, and all "votes" both use and affect reputation.
+When being asked to evaluate a coin fork, there are three possible choices an entity could make.  They could choose one fork or the other or choose not to accept a coin at all.  Peers should make their decision based on which message was published first.  If they did not independently observe which message was published first, they should rely on other trusted peers to establish which branch is valid.
 
-Anonymity, privacy, and reputation are all different concepts.  trust-coin allows users and merchants to find a balance of these that works for them and protects their interests in using the network.
+There is no standardized algorithm for evaluating reputation or weighting votes on competing branches.  Any such algorithm would become a potential weakness to be attacked.  Instead, peers share the history of all messages published by each public key.  This history can be used to apply weight to "votes" on a particular branch.
+
+Anonymity, privacy, and reputation are all different concepts.  trust-coin allows users and merchants to find a balance of these that works for them and protects their interests in using currencies on the network.
 
 
 
