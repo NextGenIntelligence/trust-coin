@@ -95,7 +95,7 @@ The one important security implication to remember when not using a public ledge
 
 ## Denominations and Multicoin transactions
 
-There is no such thing as different denominations of a trust-coin currency.  All tokens of a currency have the same value, and all transactions involve the transfer of individual tokens.  You may issue separate currencies and commit to exchange between them at a fixed rate.  In this way you may create different denominations.
+There is no such thing as different denominations of a trust-coin currency.  All tokens of a currency have the same value, and all transactions involve the transfer of individual tokens.  If you want to emulate this behavior you may issue separate currencies and commit to exchange between them at a fixed rate.  In this way you may create different denominations.
 
 trust-coin permits sending and receiving the transfer of many different tokens and even seperate currencies in a single transaction message.  All coins must belong to the holder of the public key signing the transaction.  If any coins are invalid or rejected, the recipient must reject the entire transaction.
 
