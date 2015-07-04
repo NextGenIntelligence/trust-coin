@@ -99,7 +99,7 @@ All major merchants and players should continually track the state of the networ
 
 When being asked to evaluate a coin fork, there are three possible choices an entity could make.  They could choose one fork or the other or choose not to accept a coin at all.  Peers should make their decision based on which message was published first.  If they did not independently observe which message was published first, they should rely on other trusted peers to establish which branch is valid.
 
-There is no standardized algorithm for evaluating reputation or weighting votes on competing branches.  Any such algorithm would become a potential weakness to be attacked.  Instead, peers share the history of all messages published by each public key.  This history can be used to apply weight to "votes" on a particular branch.
+There is no standardized algorithm for evaluating reputation or weighting votes on competing branches.  Any such algorithm would become a potential weakness to be attacked.  Instead, peers share the history of all messages published by each public key.  This history can be used to apply weight to "votes" made by public keys working on a particular branch of a coin's history.
 
 Anonymity, privacy, and reputation are all different concepts.  trust-coin allows users and merchants to find a balance of these that works for them and protects their interests in using currencies on the network.
 
