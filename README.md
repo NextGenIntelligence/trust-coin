@@ -1,7 +1,7 @@
 # trust-coin
 Cryptocurrency without a ledger.
 
-*Consensus through independently verified and recorded histories.*
+*Consensus through independently recorded and verified histories.*
 
 ## Overview
 
