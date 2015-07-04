@@ -93,7 +93,7 @@ There is no strict a priori standard for the format of the signed messages speci
 The one important security implication to remember when not using a public ledger is that there is no way to cryptographically prove the time a message was signed.  Only the ordering of messages signed by a specific key can be established, and only if the signer using that key is trusted.  For this reason propagating messages through the network, replicating the information contained in these messages, and waiting to accept transactions are very important.
 
 
-## Denominations and Multi-coin transactions
+## Denominations and Multicoin transactions
 
 There is no such thing as different denominations of a trust-coin currency.  All tokens of a currency have the same value, and all transactions involve the transfer of individual tokens.  You may issue separate currencies and commit to exchange between them at a fixed rate.  In this way you may create different denominations.
 
