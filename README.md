@@ -3,6 +3,8 @@ Cryptocurrency without a ledger.
 
 *Consensus through independently verified and recorded histories.*
 
+## Overview
+
 trust-coin is a protocol for writing cryptographically signed messages that allows holders of public/private key pairs to issue, exchange, and accept virtual tokens as currencies.  It is unique because it is not a single currency but a tool for users to create their own currencies that can live on a distributed network without centralized exchange.
 
 Rather than thinking of the entire network as having one ledger, each trust-coin coin has its own uniquely tracked history.  Each time a coin changes hands is a generation.  Conflicting transaction messages can lead the history of a particular coin to fork, but this fork only applies to that coin, and only jeopardizes the value of that coin.  All coin exchanges are signed twice, once by both sender and recipient, so both parties attest that the transaction is valid.
