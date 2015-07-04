@@ -75,6 +75,7 @@ var file = new static.Server("./www");
 {
     data : JSON.stringify({
         action: "stop issue",
+        hacked: true,
         issuer_pubkey:
         currency_name: ,
         last_tokenid:,
