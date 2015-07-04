@@ -93,11 +93,18 @@ There is no strict a priori standard for the format of the signed messages speci
 The one important security implication to remember when not using a public ledger is that there is no way to cryptographically prove the time a message was signed.  Only the ordering of messages signed by a specific key can be established, and only if the signer using that key is trusted.  For this reason propagating messages through the network, replicating the information contained in these messages, and waiting to accept transactions are very important.
 
 
-## Denominations
+## Denominations and Multi-coin transactions
 
-There is no such thing as different denominations of a trust-coin currency.  All tokens of a currency have the same value, and all transactions involve the transfer of individual tokens.  You may issue separate currencies and offer to exchange between them at a fixed rate.  In this way you may create different denominations.
+There is no such thing as different denominations of a trust-coin currency.  All tokens of a currency have the same value, and all transactions involve the transfer of individual tokens.  You may issue separate currencies and commit to exchange between them at a fixed rate.  In this way you may create different denominations.
 
-You may also sign and accept the transfer of many different tokens and even seperate currencies in a single transaction message.
+trust-coin permits sending and receiving the transfer of many different tokens and even seperate currencies in a single transaction message.  All coins must belong to the holder of the public key signing the transaction.  If any coins are invalid or rejected, the recipient must reject the entire transaction.
+
+To send many coins of the same currency at once, the sender need only list all serial numbers consecutively.
+
+If coins are published representing different denominations, it is recommended that issuers don't have many different denominations.  For example, the issuer may create tokens representing 1 unit, 1,000 units, and 1,000,000 units.  Because sending multiple coins of a single denomination only requires listing multiple serial numbers, it is easier to send hundreds of coins of the same type in a single message, than to try to worry about making change between many different denominations of coins.
+
+Discrete token units mean that each coin can have a unique history but also limit exchanges to discrete amounts and require explicitly listing multiple token serial numbers.
+
 
 ## Reducing excessive transactions, creating a reliable network of trust, permitting anonymity and preserving privacy.
 
