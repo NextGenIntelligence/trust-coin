@@ -79,7 +79,7 @@ var file = new static.Server("./www");
 // The sigid is an abbreviated version of the messages signature
 /*
 
-list: Returns a list of signature ids(abbreviated signatures) of all matching transactions.  All arguments are optional and restrict the selected set. Some arguments may require the presence of other arguments.  This call may return an xor union of a set of sigids that have been processed but are no longer stored in addition to listing all matching signature ids.
+list: Returns a list of signature ids(abbreviated signatures) of all matching transactions.  All arguments are optional and restrict the selected set. Some arguments may require the presence of other arguments.  This call may return an xor union of a set of sigids that have been processed but are no longer stored in addition to listing all matching signature ids.  For consistency xor history truncation should be done on a per-token basis, ie, all messages before a certain point in a coins history are discarded and replaced with the xor union of all those message signatures.
     issuer_pubkey
     currency_name
     currency_tokenid
