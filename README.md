@@ -31,20 +31,24 @@ To create a new currency and issue tokens you sign a new message for each new to
 Issued tokens belong to the issuer until they send that token to another party with a double signed transaction message.
 
 
-##Double signed transactions
+## Coin exchanges are signed by both parties
 
-Transactions messages should be signed by both participating parties: sender and recepient.  The content of the transaction message signed by each party should be identitical.
+Coin exchanges should be signed by both participating parties: sender and recipient. 
 
-Transactions should include the following information.
+Coin exchange messages should include the following information.
+  * Message action (in this case, send or receive)
+  * Parent sigid (signature id of the parent message preceeding this one in the coin's history, this creates a genealogy)
+  * Currency Issuer Public Key
   * Currency Name
   * Currency Token ID
-  * Currency Issuer Public Key
+  * Currency Generation (how many times this token has changed hands)
   * Sender Public Key
   * Recipient Public Key
   * Initial signature transaction time (to desired level of accuracy)
   * Expected Recipient Signature Delay (to desired level of accuracy)
 
-Both recipient and sender must sign a transaction for it to be valid.  Normally the sender will sign first and give the message to the recipient.  The recipient will publish the sender's signed message and wait some desired amount of time.  This delay is to discourage the possibility of double spends.  Once the recipient signs the identitical transaction the transaction is valid.
+
+Both recipient and sender must sign a coin exchange for it to be valid.  Normally the sender will sign first and give the message to the recipient.  The recipient will publish the sender's signed message and wait some desired amount of time.  This delay is to discourage the possibility of double spends.  Once the recipient signs the identitical transaction the transaction is valid.
 
 If double spends occur there is no standard way for resolving the outcome of the double spend.  Coins that are double spent may be "lost" as parties may choose to reject coins with a double spend in their history.
 
