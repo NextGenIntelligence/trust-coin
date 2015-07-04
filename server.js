@@ -63,6 +63,7 @@ var file = new static.Server("./www");
         currency_generation: ,
         sender_pubkey: ,
         recipient_pubkey: ,
+        sendmessage_sigid: ,
         sendtime: ,
         rejecttime: ,
     }),
