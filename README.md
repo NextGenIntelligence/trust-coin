@@ -97,7 +97,7 @@ The one important security implication to remember when not using a public ledge
 
 There is no such thing as different denominations of a trust-coin currency.  All tokens of a currency have the same value, and all transactions involve the transfer of individual tokens.  If you want to emulate this behavior you may issue separate currencies and commit to exchange between them at a fixed rate.  In this way you may create different denominations.
 
-trust-coin permits sending and receiving the transfer of many different tokens and even seperate currencies in a single transaction message.  All coins must belong to the holder of the public key signing the transaction.  If any coins are invalid or rejected, the recipient must reject the entire transaction.
+trust-coin permits sending and receiving the transfer of many different tokens and even seperate currencies in a single transaction message.  All coins must belong to the holder of the public key signing the transaction.  If any coins are invalid or rejected, the recipient must reject the entire transaction.  Signing an invalid transaction message puts a blemish on the signers history and can result in loss of all coins associated with the transaction.  Rejecting a transaction avoids this and allows the sender to use legitimately owned coins in a different transaction.
 
 To send many coins of the same currency at once, the sender need only list all serial numbers consecutively.
 
