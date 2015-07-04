@@ -66,6 +66,32 @@ If a party issues conflicting transaction messages, such as both accepting and r
 
 If a party tracks what messages they have signed(ie using a client) and keeps their private key secure, there is no reason they would legitimately sign conflicting transaction messages.  If transacting parties publish transaction messages promptly and wait according to described conventions, and peers track all transaction messages for currencies they accept, there should be no motivation for a party to publish illegitimate conflicting transaction messages.
 
+## Resolving double spends and coin forks
+
+For anonymous single use keys, there may be no deterrent to double spending.  Thus it is important that the community protect against attempts to double spend coins.  It is important that the behavior of the people in the network resolve double spends in a timely manner.
+
+One unique aspect of trust coin is its focus on relationships between different parties and the incentives and expectations involved in these relationships.
+
+Money is first and foremost is an accounting tool.  trust-coin is intended to be used for larger transactions or exchanges of value that are of interest to the entire community.  The time delay and discrete coin values are two aspects of trust-coin's design that discourage overreliance on the network.  If a merchant and customer have an ongoing relationship, it is expected that they would keep a seperate accounting of balances in this relationship.  This allows arbitrary accuraccy and reduces the burden placed on the network from many interactions and balance updates.
+
+Many merchants may decide not to transact with anonymous parties unless there is an ongoing relationship.  In case of a double spend that compromises the value of a coin received, they will be in a position to hold the other party accountable.
+
+Identities are free, but the history associated with each identity is not free.  Identities can be reused without tying that identity to other identities including real world identity.  Reusing the same identity develops a history and reputation of being reliable and trustworthy in conducting transactions.  In this way a public key's history of signed transactions becomes like a form of consumer credit or reddit karma.  Merchants as well should use the same public key to establish
+
+Because individual coins fork and not the entire community, an individual double spend might not be an existential threat to the community itself.  Nevertheless the community should take all instances of double spends seriously, and take effective measures as individuals to prevent or discourage this behavior in the future.
+
+Any time a branch of a coin fork is accepted after a double spend, that is effectively a vote on that branch of the coin's forked history.  In determining the weight of this vote, entities should look at the history of that public key.
+
+If you have been sabatoged by a double spend, and your own reputation is not sufficient to establish your priority claim in the outcome, you should look to spend or cycle your coin with trusted merchants or services who can affirm the temporal priority of your branch in the coin's fork.
+
+All major merchants and players should continually track the state of the network independently.  They do this to protect their interest in being able to accurately assess temporal order of transaction messages and independently verify priority of conflicting messages.  All these entities should have sufficient motivation to fairly, objectively, and independently evaluate your claim.  They should be motivated to accept your coin if your claim is valid because that means more business for them.
+
+When being asked to evaluate a coin fork, there are three possible choices an entity could make.  They could choose one fork or the other or choose not to accept a coin at all.  Having an identical process for choosing this outcome is not an advantage, but rather a weakness.  An identitical process for deciding coin forks makes it easier for attackers to evaluate what will lead one coin fork to succeed over another.  Instead, the consistency of different algorithms in choosing one fork over another is paramount.  This consistency comes from everyone participating in the network and independently recording all history for currencies of interest.  The temporal priority of messaegs should be known to everyone involved, and all "votes" both use and affect reputation.
+
+Anonymity, privacy, and reputation are all different concepts.  trust-coin allows users and merchants to find a balance of these that works for them and protects their interests in using the network.
+
+
+
 ## Stopping new issues
 
 If a currency issuer wants to permanently stop issuing tokens of a currency they may publish a message indicating the following:
