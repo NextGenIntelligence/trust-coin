@@ -9,9 +9,7 @@ Rather than thinking of the entire network as having one ledger, each trust-coin
 
 Recipients should wait a standard amount of time before publishing their signature acknowledging receipt of the coin so that all network participants can independently verify the temporal priority of that exchange in case the sender attempts a double spend after the coin is confirmed as received.  The recipient and network both have important role in assuring that double spends do not occur or are resolved consistently.
 
-It is recommended that for new currencies, the delay in accepting transactions be 24 hours.  This allows every client that downloads updates daily to positively assert which transaction message was published first in case a conflicting message is published later.  If a conflict occurs within this 24 hour window, you or your client program should not accept receipt of that coin.
-
-For popular and well established coins, the conventional acceptance delay may be a shorter time window, but should be enough time for all interested peers to get the information they need.
+It is recommended that for new currencies, the delay in accepting transactions be 24 hours.  This allows every client that downloads updates daily to positively assert which transaction message was published first in case a conflicting message is published later.  If a conflict occurs within this 24 hour window, you or your client program should not accept receipt of that coin.  For popular and well established coins, the conventional acceptance delay may be a shorter time window, but should be enough time for all interested peers to recieve the message before moving forward.
 
 Transacting on a branch of a coin's history is a vote on the validity of that branch in the case of a fork.  The history and reputation of the public keys used is considered in weighting this vote.  This is discussed in detail in the section: "Resolving double spends and coin forks"
 
