@@ -55,17 +55,13 @@ Coin exchange messages should include the following information.
   * Expected Recipient Signature Delay (to desired level of accuracy)
 
 
-Both recipient and sender must sign a coin exchange for it to be valid.  Normally the sender will sign first and give the message to the recipient.  The recipient will publish the sender's signed message and wait some desired amount of time.  This delay is to discourage the possibility of double spends.  Once the recipient signs the identitical transaction the transaction is valid.
+Both recipient and sender must sign a coin exchange for it to be valid.  The sender will sign first and give the message to the recipient.  The recipient will publish the sender's signed message and wait some desired amount of time.  Once the recipient signs the identitical transaction the transaction is valid.
 
-If double spends occur there is no standard way for resolving the outcome of the double spend.  Coins that are double spent may be "lost" as parties may choose to reject coins with a double spend in their history.
-
-This can make spent coins vulnerable to attacks where a previous coin owner can sabatoge the value of the coin by creating a double spend after the fact.  When choosing to accept or reject double spended coins you should keep such possibilities in mind.  In general, staying up to date with all published transactions involving a currency you accept is important so that you can fairly and accurately assess the legitimacy of specific transaction messages.  This behavior will normally be handled by programmed clients, but there is necessarily no strict specification for how clients handle this.  A precise prescription for how clients handle this is not necessary and would make the system vulnerable to manipulation through specific attack vectors.  Client implementors and people using those clients are responsible to make sure that the client behaves in such a way to protect their interests.
-
-This is discussed further in the section: "Conflicting transaction messages"
+Handling double spends and other conflicting transaction messages is described in the section: "Conflicting transaction messages", and "Resolving double spends and coin forks"
 
 ## Rejecting transactions
 
-In case a transaction fails or is aborted before both parties sign the transaction, the recipient may publish a cancellation message to indicate the transaction will not occur and allow the sender spend that token somewhere else.
+In case a transaction fails or is aborted before both parties sign the transaction, the recipient may publish a reject message to indicate the transaction will not occur and allow the sender spend that token somewhere else.
 
 Senders should allow the recipient to publish the transaction message that they send them.  This way if a recipient chooses not to accept the token they should not publish the received transaction message.  Nevertheless it is good practice to issue a transaction rejection message which the sender can publish so they are free to use the token again immediately, without fear of a conflicting transaction message being published and putting a blemish on their record.
 
